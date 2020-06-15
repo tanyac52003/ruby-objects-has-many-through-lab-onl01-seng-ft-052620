@@ -16,13 +16,10 @@ class Doctor
     Appointment.new(date,patient,self)
   end 
  
-    def appointments
-    appts = Appointment.class_variable_get(:@@all)
-    appts.each do |appointment|
-      if appointment.doctor == self 
-        @appointments.push(appointment)
-      end 
-    end 
+  def appointments
+     def appointments 
+    Appointment.all.select do |appointment|
+      appointment.doctor == self 
   end
  
   
